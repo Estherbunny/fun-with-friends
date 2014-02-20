@@ -31,7 +31,7 @@
             NSLog(@"YaY! API query success");
         } else {
             NSString *errorString = [error userInfo][@"error"];
-            NSLog(@"%@",errorString);
+            NSLog(@"API Query Error : %@",errorString);
             // Show the errorString somewhere and let the user try again.
         }
     }];
