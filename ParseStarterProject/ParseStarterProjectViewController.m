@@ -18,9 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFUser *user = [PFUser user];
-    user.username = @"EstherBunny";
+    user.username = @"EstherRasche";
     user.password = @"letmein";
-    user.email = @"Estherbunny80@gmail.com";
+    user.email = @"esther.rasche@gmail.com";
     
     // other fields can be set if you want to save more information
     user[@"phone"] = @"512-762-6686";
@@ -28,8 +28,10 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
+            NSLog(@"YaY! API query success");
         } else {
             NSString *errorString = [error userInfo][@"error"];
+            NSLog(@"%@",errorString);
             // Show the errorString somewhere and let the user try again.
         }
     }];
